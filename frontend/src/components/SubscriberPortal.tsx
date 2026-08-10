@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Zap, XCircle, Loader2, ArrowUpRight, Lock } from 'lucide-react';
+import { Zap, XCircle, Loader2, ArrowUpRight, Lock, ExternalLink } from 'lucide-react';
 import { toast } from 'sonner';
 import { logWalletInteraction } from '../lib/supabase';
+import { CONTRACT_ID } from '../lib/soroban';
 
 interface SubscriberPortalProps {
   address: string | null;
@@ -107,6 +108,17 @@ export const SubscriberPortal: React.FC<SubscriberPortalProps> = ({ address, onO
           <h1 className="font-bebas text-5xl sm:text-6xl text-white tracking-wide mt-1">
             MY ACTIVE <span className="text-[#FF5733]">SUBSCRIPTIONS</span>
           </h1>
+          <div className="flex items-center gap-2 text-xs text-gray-400 mt-1">
+            <span>Contract ID:</span>
+            <a
+              href={`https://stellar.expert/explorer/testnet/contract/${CONTRACT_ID}`}
+              target="_blank"
+              rel="noreferrer"
+              className="font-mono text-emerald-400 hover:underline flex items-center gap-1"
+            >
+              {CONTRACT_ID.slice(0, 8)}...{CONTRACT_ID.slice(-8)} <ExternalLink size={11} />
+            </a>
+          </div>
         </div>
 
         {!address && (

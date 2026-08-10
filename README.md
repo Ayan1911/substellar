@@ -10,7 +10,9 @@
 | Item | Value / Address / Link |
 |---|---|
 | **Network** | Stellar Testnet |
-| **Soroban Contract** | [`CCYQ3FUACSY4YDCRCC6OK7CKUZ53JE7AQM4N5EYIFVDYCU5KNEJJHXCB`](https://stellar.expert/explorer/testnet/contract/CCYQ3FUACSY4YDCRCC6OK7CKUZ53JE7AQM4N5EYIFVDYCU5KNEJJHXCB) |
+| **Soroban Contract** | [`CD7KRXBIHVP7AKQXQFPEI5PBJFYWPTV3PWURSFRBVNLCQHMLNY3RKA7D`](https://stellar.expert/explorer/testnet/contract/CD7KRXBIHVP7AKQXQFPEI5PBJFYWPTV3PWURSFRBVNLCQHMLNY3RKA7D) |
+| **Deploy Tx Hash** | [`e27a5356a9634df1b2585ecd8514ef4512234a322c906dfd858d3818ac4b7161`](https://stellar.expert/explorer/testnet/tx/e27a5356a9634df1b2585ecd8514ef4512234a322c906dfd858d3818ac4b7161) |
+| **WASM Upload Tx** | [`8c584acd880d9794c651729554d28be470d9bf4f7461ffbfb5f1f9435543f0c5`](https://stellar.expert/explorer/testnet/tx/8c584acd880d9794c651729554d28be470d9bf4f7461ffbfb5f1f9435543f0c5) |
 | **GitHub Repository** | [Ayan1911/substellar](https://github.com/Ayan1911/substellar) |
 | **Telemetry & DB** | Supabase (Auth, Wallet Interaction Logs, User Feedback) |
 | **Error Monitoring** | Sentry Browser & Session Replay Telemetry |
