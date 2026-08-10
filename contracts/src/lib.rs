@@ -3,6 +3,9 @@ use soroban_sdk::{
     contract, contractimpl, contracttype, token, Address, Env
 };
 
+#[cfg(test)]
+mod test;
+
 const DAY_IN_LEDGERS: u32 = 17280; // ~5s per ledger
 const BUMP_AMOUNT: u32 = 30 * DAY_IN_LEDGERS; // Extend for 30 days
 const LIFETIME_THRESHOLD: u32 = 7 * DAY_IN_LEDGERS;
