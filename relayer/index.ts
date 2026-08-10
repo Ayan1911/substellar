@@ -10,6 +10,11 @@ const STELLAR_RPC_URL = process.env.STELLAR_RPC_URL || 'https://soroban-testnet.
 const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
 const server = new rpc.Server(STELLAR_RPC_URL);
 
+/**
+ * SubStellar Relayer Engine
+ * Queries due subscriptions from Supabase and submits signed execute_billing
+ * transactions to the Soroban RPC endpoint on Stellar Testnet.
+ */
 export async function runBillingRelayerJob() {
   console.log('[SubStellar Relayer] 🚀 Starting automated recurring billing check...');
 
