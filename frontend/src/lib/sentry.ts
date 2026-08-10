@@ -1,5 +1,9 @@
 import * as Sentry from '@sentry/react';
 
+/**
+ * Sentry Error Tracking and Performance Monitoring Initialization.
+ * Captures uncaught frontend exceptions and session replays.
+ */
 export const initSentry = () => {
   const dsn = import.meta.env.VITE_SENTRY_DSN;
   if (!dsn) {
