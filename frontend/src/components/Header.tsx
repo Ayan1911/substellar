@@ -1,10 +1,11 @@
 import React from 'react';
-import { Wallet, Zap } from 'lucide-react';
+import { Wallet, Zap, MessageSquare } from 'lucide-react';
 
 interface HeaderProps {
   address: string | null;
   isConnecting: boolean;
   onConnectClick: () => void;
+  onOpenFeedback: () => void;
   activeTab: 'landing' | 'merchant' | 'subscriber';
   setActiveTab: (tab: 'landing' | 'merchant' | 'subscriber') => void;
 }
@@ -13,6 +14,7 @@ export const Header: React.FC<HeaderProps> = ({
   address,
   isConnecting,
   onConnectClick,
+  onOpenFeedback,
   activeTab,
   setActiveTab,
 }) => {
@@ -64,7 +66,15 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
 
         {/* Action Controls */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
+          <button
+            onClick={onOpenFeedback}
+            className="p-2.5 rounded-lg bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-white/10 transition-colors"
+            title="Feedback Telemetry"
+          >
+            <MessageSquare size={16} />
+          </button>
+
           <div className="hidden lg:flex items-center gap-2 text-xs text-gray-400 bg-white/5 px-3 py-1.5 rounded-full border border-white/10">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
             Stellar Testnet

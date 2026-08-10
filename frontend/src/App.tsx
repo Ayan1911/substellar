@@ -6,12 +6,14 @@ import { Features } from './components/Features';
 import { MerchantDashboard } from './components/MerchantDashboard';
 import { SubscriberPortal } from './components/SubscriberPortal';
 import { WalletModal } from './components/WalletModal';
+import { FeedbackModal } from './components/FeedbackModal';
 import { useWallet } from './hooks/useWallet';
 
 export default function App() {
   const { address, isConnecting, connect, disconnect } = useWallet();
   const [activeTab, setActiveTab] = useState<'landing' | 'merchant' | 'subscriber'>('landing');
   const [isWalletModalOpen, setIsWalletModalOpen] = useState(false);
+  const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-[#050505] text-white font-inter selection:bg-[#FF5733] selection:text-white flex flex-col justify-between">
@@ -22,6 +24,7 @@ export default function App() {
         address={address}
         isConnecting={isConnecting}
         onConnectClick={() => setIsWalletModalOpen(true)}
+        onOpenFeedback={() => setIsFeedbackOpen(true)}
         activeTab={activeTab}
         setActiveTab={setActiveTab}
       />
@@ -60,9 +63,12 @@ export default function App() {
             <span className="font-bebas text-xl text-white tracking-wider">SUBSTELLAR</span>
             <span>— Stellar Level 4 Green Belt Web3 SaaS Gateway</span>
           </div>
-          <div>
-            Powered by Soroban Smart Contracts & Supabase Telemetry
-          </div>
+          <button
+            onClick={() => setIsFeedbackOpen(true)}
+            className="text-gray-400 hover:text-[#FF5733] transition-colors font-medium underline uppercase tracking-wider text-[11px]"
+          >
+            Feedback & Telemetry
+          </button>
         </div>
       </footer>
 
@@ -74,6 +80,13 @@ export default function App() {
         isConnecting={isConnecting}
         onConnect={connect}
         onDisconnect={disconnect}
+      />
+
+      {/* Feedback Modal */}
+      <FeedbackModal
+        isOpen={isFeedbackOpen}
+        onClose={() => setIsFeedbackOpen(false)}
+        address={address}
       />
     </div>
   );
