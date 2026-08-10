@@ -2,6 +2,10 @@ import { useState, useEffect } from 'react';
 import { isConnected, getAddress, requestAccess } from '@stellar/freighter-api';
 import { logWalletInteraction, logUserOnboarding } from '../lib/supabase';
 
+/**
+ * Custom React Hook managing Freighter Wallet extension connections,
+ * public key state, and telemetry logging to Supabase.
+ */
 export function useWallet() {
   const [address, setAddress] = useState<string | null>(null);
   const [isConnecting, setIsConnecting] = useState(false);
