@@ -11,6 +11,10 @@ interface State {
   error: Error | null;
 }
 
+/**
+ * Voxel-themed Error Boundary component.
+ * Catches uncaught React runtime exceptions and reports telemetry to Sentry.
+ */
 export class ErrorBoundary extends Component<Props, State> {
   public state: State = {
     hasError: false,
