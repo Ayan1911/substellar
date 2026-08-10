@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #050505;
+  --color-brand: #FF5733;
+  --color-brand-hover: #E04C2C;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #D1D5DB;
+  --color-text-muted: #6B7280;
+
+  --font-bebas: "Bebas Neue", sans-serif;
+  --font-inter: "Inter", sans-serif;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-inter);
+}
+
+::selection {
+  background-color: var(--color-brand);
+  color: var(--color-text-primary);
+}
+
+/* Base styling for glassmorphic elements */
+.glass-panel {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+.glass-panel:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
